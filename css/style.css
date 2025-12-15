@@ -1,0 +1,211 @@
+/*
+Name: Ashton Roxas
+Date: December 14, 2025
+File: style.css
+
+Assignment: HW5 - Scrabble Game Implementation
+
+Description:
+    Contains all styling for the Scrabble game, including the responsive grid layout,
+    custom tile designs, wooden rack styling, and the "Purple/Amethyst" color theme.
+
+Ashton Roxas, UMass Lowell Computer Science, ashton_roxas@student.uml.edu
+Copyright (c) 2025 by Ashton Roxas. All rights reserved.
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1025; /* Deep Purple Background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+}
+
+.main-layout {
+    width: 98%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Panels */
+.instructions-panel, .stats-panel {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #2c1e3d;
+    border: 2px solid #9b59b6; 
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.instructions-panel h3, .stats-panel h3 {
+    margin-top: 0;
+    color: #e8daef;
+    border-bottom: 1px solid #5b2c6f;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.instructions-panel ul { padding-left: 20px; }
+.instructions-panel strong { color: #d2b4de; }
+
+/* Stats Table */
+.table-container { max-height: 500px; overflow-y: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; color: white; font-size: 0.9rem; }
+th, td { padding: 8px; text-align: center; border: 1px solid #5b2c6f; }
+th { background-color: #4a235a; font-weight: bold; color: #f4ecf7; }
+td { background-color: #6c3483; font-weight: bold; }
+
+/* Game Wrapper */
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Board */
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);
+    grid-template-rows: repeat(15, 40px);
+    gap: 2px;
+    background-color: #8e44ad; 
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.grid-sq {
+    width: 40px;
+    height: 40px;
+    background-color: #f4ecf7; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    user-select: none;
+}
+
+.grid-sq span {
+    font-size: 7.5px; 
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #4a235a; 
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Bonus Colors */
+.sq-tw { background-color: #c0392b; } .sq-tw span { color: white; }
+.sq-dw { background-color: #e6b0aa; } .sq-dw span { color: #641e16; }
+.sq-tl { background-color: #2980b9; } .sq-tl span { color: white; }
+.sq-dl { background-color: #a9cce3; } .sq-dl span { color: #154360; }
+.sq-center { background-color: #e6b0aa; font-size: 24px; color: white; }
+
+.grid-sq img { width: 100%; height: 100%; object-fit: cover; z-index: 10; }
+
+/* --- RACK STYLING UPDATED FOR FILE PATH --- */
+.wood-rack {
+    width: 500px;
+    height: 80px;
+    
+    /* UPDATED PATH: Goes up one level (../) then into graphics_data */
+    background-image: url('../graphics_data/scrabble-tile-holder-406774_640.png');
+    
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Aligns tiles to the bottom ledge */
+    padding-bottom: 12px;
+    margin-top: 15px;
+}
+
+.wood-rack img {
+    width: 42px;
+    height: 42px;
+    margin: 0 2px;
+    cursor: grab;
+    transition: transform 0.1s;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.wood-rack img:active { transform: scale(1.1); cursor: grabbing; }
+
+/* Controls */
+.controls-area { display: flex; align-items: center; gap: 15px; margin-top: 10px; }
+
+.action-btn {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 0 #5b2c6f;
+}
+.action-btn:hover { background-color: #9b59b6; transform: translateY(-2px); box-shadow: 0 6px 0 #5b2c6f; }
+.action-btn:active { transform: translateY(0); box-shadow: 0 2px 0 #5b2c6f; }
+
+.icon-control {
+    width: 45px; height: 45px; cursor: pointer; transition: transform 0.2s;
+    filter: drop-shadow(0 0 2px #8e44ad);
+}
+.icon-control:hover { transform: scale(1.1); }
+.icon-control img { width: 100%; height: 100%; object-fit: contain; }
+
+.score-display {
+    font-size: 1.5rem; font-weight: bold; color: #e8daef; margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Modal */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7); display: flex;
+    justify-content: center; align-items: center; z-index: 9999;
+}
+.hidden { display: none; }
+.modal-body {
+    background: #2c1e3d; padding: 30px; border-radius: 8px;
+    border: 2px solid #9b59b6; text-align: center;
+    min-width: 300px; color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+.modal-body button {
+    margin-top: 20px; background: #8e44ad; border: none;
+    padding: 10px 25px; color: white; font-weight: bold;
+    cursor: pointer; border-radius: 4px;
+}
+.modal-body button:hover { background-color: #9b59b6; }
+
+@media (max-width: 1200px) {
+    .main-layout { flex-direction: column; align-items: center; }
+    .instructions-panel, .stats-panel { width: 90%; max-width: 600px; }
+    .stats-panel { order: 3; } 
+}
+
+/* jQuery UI Helper Classes */
+.ui-draggable-dragging {
+    z-index: 1000 !important;
+    width: 42px !important; 
+    height: 42px !important;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}

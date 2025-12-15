@@ -1,0 +1,96 @@
+<!-- 
+Name: Ashton Roxas
+Date: 12/12/2025
+File: index.html
+
+GUI Assignment:
+    This assignment is about creating a web app copy of the infamous game scrabble, by utilizing jQuery and our knowledge of
+    HTML, CSS, and JavaScript.
+
+Ashton Roxas, UMass Lowell Computer Science, ashton_roxas@student.uml.edu
+Copyright (c) 2025 by Ashton Roxas. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrabble Word Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+</head>
+<body>
+
+    <div class="main-layout">
+        
+        <aside class="instructions-panel">
+            <h3>How to Play</h3>
+            <p><strong>Goal:</strong> Drag tiles to the board to build words and maximize your score.</p>
+            <ul>
+                <li><strong>Start:</strong> First word must cover the Center Star (★).</li>
+                <li><strong>Connect:</strong> New tiles must touch existing ones.</li>
+                <li><strong>Validate:</strong> Submit word to verify and score.</li>
+                <li><strong>Recall:</strong> Undo last move (if hand not refreshed).</li>
+                <li><strong>Swap:</strong> Drag tile to Trash to swap.</li>
+            </ul>
+        </aside>
+
+        <main class="game-wrapper">
+            
+            <div id="msg-modal" class="modal-backdrop hidden">
+                <div class="modal-body">
+                    <p id="msg-text">Notification</p>
+                    <button id="modal-ack-btn">OK</button>
+                </div>
+            </div>
+
+            <div id="scrabble-grid" class="board-container"></div>
+
+            <div id="rack-container" class="wood-rack"></div>
+
+            <div class="controls-area">
+                <button id="btn-validate" class="action-btn">Validate Word</button>
+                <button id="btn-new-game" class="action-btn">New Game</button>
+                <button id="btn-recall" class="action-btn">Recall Tile</button>
+                
+                <div id="btn-refresh" class="icon-control" title="Get new tiles">
+                    <img src="icons/refresh.png" alt="Refresh Hand">
+                </div>
+                
+                <div id="zone-trash" class="icon-control trash-bin" title="Drag tile here to discard">
+                    <img src="icons/trashicon.png" alt="Trash Can">
+                </div>
+            </div>
+
+            <div class="score-display">
+                Total Score: <span id="score-val">0</span>
+            </div>
+        </main>
+
+        <aside class="stats-panel">
+            <h3>Letter Stats</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Letter</th>
+                            <th>Used</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stats-body">
+                        </tbody>
+                </table>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

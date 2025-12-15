@@ -6,8 +6,8 @@
 **Assignment:** HW5
 
 ## Links
-* **Deployed App:** [INSERT YOUR GITHUB PAGES URL HERE]
-* **GitHub Repository:** (https://github.com/Ashtonroxas/GUI_HW5)
+* **Deployed App:** https://ashtonroxas.github.io/GUI_HW5/
+* **GitHub Repository:** https://github.com/Ashtonroxas/GUI_HW5
 
 ## Extra Credit Features
 
@@ -50,6 +50,3 @@ A live statistics panel is displayed on the right side of the screen.
 * **Garbage Bin:**
   Accepts a single tile via drag-and-drop to swap it for a new random tile from the bag.
 
-## Technical Details
-* **Libraries:** jQuery and **jQuery UI** (for Draggable/Droppable interactions).
-* **Styling:** Custom "Purple/Amethyst" CSS theme with a responsive layout.

@@ -236,9 +236,6 @@ $(document).ready(function() {
         accept: ".tile-img",
         drop: function(event, ui) {
             const $tile = ui.draggable;
-            // Only allow trashing if it came from rack (parent is rack-container)
-            // Note: In jQuery UI drop, the element hasn't moved parents yet
-            // We check where it *started*.
             
             // Simplified: We just check if it's NOT in a grid square yet
             if (!$tile.parent().hasClass('grid-sq')) {

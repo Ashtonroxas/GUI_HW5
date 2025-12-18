@@ -374,7 +374,7 @@ $(document).ready(function() {
         let turnPts = 0;
         for (let w of newWords) {
             try {
-                const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${w}`);
+                const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${w}`); //API
                 if (!res.ok) { alertUser(`Invalid: ${w}`); return; }
 
                 let wScore = 0;

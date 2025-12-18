@@ -2,7 +2,7 @@
 
 **Name:** Ashton Roxas
 **Email:** ashton_roxas@student.uml.edu
-**Course:** GUI Programming I (COMP.4610)
+**Course:** GUI Programming I
 **Assignment:** HW5
 
 ## Links

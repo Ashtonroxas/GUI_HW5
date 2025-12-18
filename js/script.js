@@ -9,10 +9,6 @@ Description:
     Main logic for the Scrabble game. Handles the generation of the board, tile distribution,
     drag-and-drop interactions, score calculation, and game state management (refresh, recall, validation).
 
-Sources:
-    - Scrabble tile data structure provided by Prof. Jesse Heines.
-    - Drag-and-drop logic adapted from HTML5 API documentation.
-
 Ashton Roxas, UMass Lowell Computer Science, ashton_roxas@student.uml.edu
 Copyright (c) 2025 by Ashton Roxas. All rights reserved.
 */
